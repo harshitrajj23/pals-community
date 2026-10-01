@@ -1,0 +1,24 @@
+{
+  "name": "pals-community",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --experimental-strip-types server.ts",
+    "test": "node --experimental-strip-types test/test-runner.ts",
+    "build": "node --check server.ts"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.49.1",
+    "next": "^14.2.24",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.9",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "tsx": "^4.19.3",
+    "typescript": "^5.8.2"
+  }
+}

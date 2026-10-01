@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PALS Community | Tag. Post. Win.</title>
+  <meta name="description" content="PALS Community — Tag @palsofficial on Instagram, get featured in our live feed, and win exclusive PALS goodies. Join the Tag. Post. Win. campaign now!" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <nav class="navbar" id="navbar">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo">
+        <span class="logo-text">PALS</span>
+        <span class="logo-dot">community</span>
+      </a>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#campaign">Campaign</a></li>
+        <li><a href="#feed">Feed</a></li>
+        <li><a href="#winners">Winners</a></li>
+        <li><a href="#rules">Rules</a></li>
+        <li><a href="#" class="nav-cta" id="adminToggleBtn">Admin</a></li>
+      </ul>
+      <button class="hamburger" id="hamburger" aria-label="Toggle menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========== HERO with Three.js Canvas ========== -->
+  <section class="hero" id="hero">
+    <canvas id="heroCanvas"></canvas>
+    <div class="hero-content">
+      <p class="hero-tag">@pals.x.bmsit</p>
+      <h1 class="hero-title">
+        <span class="hero-line">Tag.</span>
+        <span class="hero-line">Post.</span>
+        <span class="hero-line accent">Win.</span>
+      </h1>
+      <p class="hero-desc">Tag <strong>@pals.x.bmsit</strong> on Instagram, get featured on our live community wall, and win exclusive PALS goodies.</p>
+      <div class="hero-actions">
+        <a href="#feed" class="btn btn-primary">Explore Feed</a>
+        <a href="#rules" class="btn btn-outline">How It Works</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat">
+          <span class="stat-num" id="statPosts">0</span>
+          <span class="stat-label">Posts Tagged</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statParticipants">0</span>
+          <span class="stat-label">Participants</span>
+        </div>
+        <div class="stat">
+          <span class="stat-num" id="statWinners">0</span>
+          <span class="stat-label">Winners</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== CAMPAIGN SECTION ========== -->
+  <section class="section campaign" id="campaign">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Campaign</span>
+        <h2 class="section-title">How <em>Tag. Post. Win.</em> Works</h2>
+        <p class="section-subtitle">Three simple steps to get featured and win goodies from PALS.</p>
+      </div>
+      <div class="steps-grid">
+        <div class="step-card" data-step="1">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="4" y="4" width="40" height="40" rx="12" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="20" r="6" stroke="currentColor" stroke-width="2.5"/><path d="M12 40c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="step-number">01</span>
+          <h3>Tag @pals.x.bmsit</h3>
+          <p>Mention or tag <strong>@pals.x.bmsit</strong> in your public Instagram post, story, or reel.</p>
+        </div>
+        <div class="step-card" data-step="2">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none"><rect x="6" y="2" width="36" height="44" rx="8" stroke="currentColor" stroke-width="2.5"/><circle cx="24" cy="18" r="8" stroke="currentColor" stroke-width="2.5"/><path d="M14 34h20M18 40h12" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+          </div>
+          <span class="step-number">02</span>
+          <h3>Post Gets Detected</h3>
+          <p>Our system automatically picks up your post and adds it to the community feed.</p>
+        </div>
+        <div class="step-card" data-step="3">
+          <div class="step-icon">
+            <svg viewBox="0 0 48 48" fill="none"><path d="M24 4l6.18 12.52L44 18.82l-10 9.74L36.36 44 24 37.52 11.64 44 14 28.56 4 18.82l13.82-2.3L24 4z" stroke="currentColor" stroke-width="2.5" stroke-linejoin="round"/></svg>
+          </div>
+          <span class="step-number">03</span>
+          <h3>Win PALS Goodies</h3>
+          <p>The first valid post each campaign wins exclusive merchandise and goodies!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== LIVE FEED ========== -->
+  <section class="section feed-section" id="feed">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Live Feed</span>
+        <h2 class="section-title">Community Wall</h2>
+        <p class="section-subtitle">Recent posts from students who tagged @pals.x.bmsit</p>
+      </div>
+
+      <!-- Filters -->
+      <div class="feed-controls">
+        <div class="filter-bar">
+          <button class="filter-btn active" data-filter="all">All Posts</button>
+          <button class="filter-btn" data-filter="photo">Photos</button>
+          <button class="filter-btn" data-filter="reel">Reels</button>
+          <button class="filter-btn" data-filter="story">Stories</button>
+        </div>
+        <div class="sort-bar">
+          <select class="sort-select" id="sortSelect">
+            <option value="latest">Latest First</option>
+            <option value="oldest">Oldest First</option>
+            <option value="popular">Most Liked</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- Feed Grid -->
+      <div class="feed-grid" id="feedGrid">
+        <!-- Cards injected by JS -->
+      </div>
+
+      <div class="feed-empty hidden" id="feedEmpty">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none"><rect x="8" y="8" width="48" height="48" rx="14" stroke="#ccc" stroke-width="2.5"/><circle cx="24" cy="28" r="6" stroke="#ccc" stroke-width="2.5"/><path d="M8 44l12-12 8 8 10-14 18 22" stroke="#ccc" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <p>No posts found for this filter.</p>
+      </div>
+
+      <button class="btn btn-outline load-more" id="loadMoreBtn">Load More</button>
+    </div>
+  </section>
+
+  <!-- ========== WINNERS ========== -->
+  <section class="section winners-section" id="winners">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Hall of Fame</span>
+        <h2 class="section-title">Campaign Winners</h2>
+        <p class="section-subtitle">Students who won exclusive PALS goodies</p>
+      </div>
+      <div class="winners-grid" id="winnersGrid">
+        <!-- Winners injected by JS -->
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== RULES ========== -->
+  <section class="section rules-section" id="rules">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-badge">Guidelines</span>
+        <h2 class="section-title">Campaign Rules</h2>
+        <p class="section-subtitle">Please read before participating</p>
+      </div>
+      <div class="rules-list">
+        <div class="rule-item">
+          <span class="rule-num">1</span>
+          <div>
+            <h4>Public Account Required</h4>
+            <p>Your Instagram account must be set to <strong>public</strong> for us to detect your post.</p>
+          </div>
+        </div>
+        <div class="rule-item">
+          <span class="rule-num">2</span>
+          <div>
+            <h4>Tag @pals.x.bmsit</h4>
+            <p>Your post must <strong>tag or mention @pals.x.bmsit</strong> in the caption or photo tags.</p>
+          </div>
+        </div>
+        <div class="rule-item">
+          <span class="rule-num">3</span>
+          <div>
+            <h4>Original Content Only</h4>
+            <p>Reposts, screenshots, or AI-generated content will be disqualified.</p>
+          </div>
+        </div>
+        <div class="rule-item">
+          <span class="rule-num">4</span>
+          <div>
+            <h4>First Valid Post Wins</h4>
+            <p>Each campaign round, the <strong>first post</strong> that passes moderation wins goodies.</p>
+          </div>
+        </div>
+        <div class="rule-item">
+          <span class="rule-num">5</span>
+          <div>
+            <h4>No Inappropriate Content</h4>
+            <p>Posts with offensive, NSFW, or hateful content will be removed and the user may be banned.</p>
+          </div>
+        </div>
+        <div class="rule-item">
+          <span class="rule-num">6</span>
+          <div>
+            <h4>One Entry Per Person</h4>
+            <p>Multiple entries from the same account count as one. Fairness matters.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div class="footer-left">
+        <span class="nav-logo">
+          <span class="logo-text">PALS</span>
+          <span class="logo-dot">xBMSIT</span>
+        </span>
+        <p>Official PALS Club · IITM Affiliated · BMSIT</p>
+      </div>
+      <div class="footer-right">
+        <a href="https://instagram.com/pals.x.bmsit" target="_blank" rel="noopener">Instagram (@pals.x.bmsit)</a>
+        <a href="https://palsbmsit.netlify.app" target="_blank" rel="noopener">Website</a>
+        <a href="#rules">Rules</a>
+        <a href="#feed">Feed</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2026 PALSxBMSIT. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- ========== ADMIN PANEL (Modal) ========== -->
+  <div class="admin-overlay hidden" id="adminOverlay">
+    <div class="admin-panel" id="adminPanel">
+      <div class="admin-header">
+        <h2>Admin Moderation</h2>
+        <button class="admin-close" id="adminCloseBtn">&times;</button>
+      </div>
+
+      <!-- Admin Login -->
+      <div class="admin-login" id="adminLogin">
+        <p>Enter admin password to continue</p>
+        <div class="admin-login-form">
+          <input type="password" id="adminPassword" placeholder="Password" class="admin-input" />
+          <button class="btn btn-primary" id="adminLoginBtn">Login</button>
+        </div>
+        <p class="admin-hint">Hint: pals2026</p>
+      </div>
+
+      <!-- Admin Dashboard -->
+      <div class="admin-dashboard hidden" id="adminDashboard">
+        <div class="admin-tabs">
+          <button class="admin-tab active" data-tab="pending">Pending Review</button>
+          <button class="admin-tab" data-tab="approved">Approved</button>
+          <button class="admin-tab" data-tab="rejected">Rejected</button>
+          <button class="admin-tab" data-tab="ingest">+ Ingest Post</button>
+        </div>
+        <div class="admin-posts" id="adminPosts">
+          <!-- Admin post cards injected by JS -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ========== POST DETAIL MODAL ========== -->
+  <div class="modal-overlay hidden" id="postModal">
+    <div class="modal-content">
+      <button class="modal-close" id="modalCloseBtn">&times;</button>
+      <div class="modal-body" id="modalBody">
+        <!-- Dynamic content -->
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
